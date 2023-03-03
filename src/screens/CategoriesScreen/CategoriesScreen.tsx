@@ -3,12 +3,11 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
-  TextInput,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import global from "../../styles/Styles";
 import useFetch from "../../hooks/useFetch";
-import { Spinner } from "../../components";
+import { SearchInput, Spinner } from "../../components";
 
 type Props = {
   navigation: any;
@@ -27,11 +26,12 @@ type Response = {
 };
 
 const CategoriesScreen = ({ navigation }: Props) => {
-  const [categories]  = useFetch("https://wger.de/api/v2/exercisecategory/");
+  const [categories]: any  = useFetch("https://wger.de/api/v2/exercisecategory/");
 
   if (!categories || categories.length < 1) return <Spinner />;
   return (
     <View>
+      <SearchInput />
       <FlatList
         data={categories.results}
         renderItem={({ item }) => (

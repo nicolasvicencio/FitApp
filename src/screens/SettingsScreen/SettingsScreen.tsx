@@ -7,7 +7,7 @@ type Props = {}
 const SettingsScreen = (props: Props) => {
 	return (
 		<View style={global.container}>
-			
+			<Text>Night Mode</Text>
 		</View>
 	)
 }

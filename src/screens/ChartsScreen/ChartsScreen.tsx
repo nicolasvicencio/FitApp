@@ -3,7 +3,7 @@ import React from "react";
 import global from "../../styles/Styles";
 import { Dimensions } from "react-native";
 import { LineChart } from "react-native-chart-kit";
-import { COLORS } from "../../styles/Styles";
+import { COLORS } from "../../utils/colors";
 type Props = {};
 
 const ChartsScreen = (props: Props) => {

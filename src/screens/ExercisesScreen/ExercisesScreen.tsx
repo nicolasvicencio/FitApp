@@ -1,10 +1,9 @@
 import { View, Text, FlatList, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import useFetch from '../../hooks/useFetch'
-import { Spinner } from '../../components'
+import { SearchInput, Spinner } from '../../components'
 
 import global from '../../styles/Styles'
-import { EvilIcons } from "@expo/vector-icons";
 
 
 type Props = {
@@ -13,18 +12,14 @@ type Props = {
 }
 
 const ExercisesScreen = ({route, navigation}: Props) => {
-	const [exercises] = useFetch(
+	const [exercises]: any = useFetch(
     `https://wger.de/api/v2/exercise/?category=${route.params.category}&language=2&limit=100`
   );
 
 	if (!exercises ) return <Spinner />
 	return (
     <View>
-      <View style={global.inputContainer}>
-        <TextInput style={global.input}>
-          <EvilIcons name="search" size={24} color="black" />
-        </TextInput>
-      </View>
+      <SearchInput />
       <FlatList
         data={exercises.results}
         keyExtractor={(item) => item.id}

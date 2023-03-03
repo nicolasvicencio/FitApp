@@ -14,7 +14,7 @@ const global = StyleSheet.create({
   },
   container: {
     paddingHorizontal: 20,
-    backgroundColor: COLORS.background,
+    backgroundColor: '#fff',
     height: '93%' ,
     width: "100%",
     position: "relative",
